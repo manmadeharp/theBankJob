@@ -1,13 +1,50 @@
-register{
-  float: right;
-  position:relative;
+register {
+    float: right;
+    position: relative;
 
 }
-login{
-  float: right;
-  position:relative;
+
+login {
+    float: right;
+    position: relative;
 
 }
+
 #body {
-  width: 80%;
+    width: 80%;
+}
+
+#components-layout-demo-responsive .logo {
+    height: 32px;
+    background: rgba(255, 255, 255, 0.2);
+    margin: 16px;
+}
+
+.site-layout-sub-header-background {
+    background: #fff;
+}
+
+.site-layout-background {
+    background: #fff;
+}
+
+/*#root {*/
+/*  width: 100px;*/
+/*}*/
+.logo {
+    height: 50px;
+    color: white;
+    text-align: center;
+    justify-content: center;
+    margin-top: 10%;
+    font-size: large;
+    font-family: "Arial";
+}
+
+section.ant-layout {
+    height: max-content;
+    min-height: 1008px;
+}
+div.site-layout-background{
+    min-height: 850px;
 }
