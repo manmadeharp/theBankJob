@@ -9,8 +9,8 @@ import {createOrUpdateUser} from "../../functions/auth";
 import Layout from '../../componenets/Layout/Layout'
 
 const Login = ({history}) => {
-    const [email, setEmail] = useState("gqlreactnode@gmail.com");
-    const [password, setPassword] = useState("gggggg");
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
     const [loading, setLoading] = useState(false);
 
     const {user} = useSelector((state) => ({...state}));
@@ -33,9 +33,9 @@ const Login = ({history}) => {
             history.push(intended.from);
         } else {
             if (res.data.role === "admin") {
-                history.push("/admin/dashboard");
+                history.push("/");
             } else {
-                history.push("/user/history");
+                history.push("/");
             }
         }
     };

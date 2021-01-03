@@ -7,11 +7,14 @@ import {ToastContainer} from "react-toastify";
 import {useDispatch} from "react-redux";
 
 import {currentUser} from "./functions/auth";
-
+import Layout from './componenets/Layout/Layout'
 const Home = lazy(() => import('./pages/home'))
 const Register = lazy(() => import('./pages/auth/Register'))
 const Login = lazy(() => import('./pages/auth/Login'))
 const RegisterComplete = lazy(() => import("./pages/auth/completeRegistration"));
+const Development = lazy(() => import("./pages/Development/Outline"));
+const Goals = lazy(() => import("./pages/Development/goals"));
+
 const App = () => {
     const dispatch = useDispatch()
 
@@ -42,7 +45,7 @@ const App = () => {
     return (
         <Suspense
             fallback={
-                <div>loading</div>
+                <Layout text={<div></div>}></Layout>
             }
         >
             {/*<Template/>*/}
@@ -54,6 +57,8 @@ const App = () => {
                 <Route exact path="/register" component={Register}/>
                 <Route exact path="/login" component={Login}/>
                 <Route exact path="/register/complete" component={RegisterComplete}/>
+                <Route exact path="/development" component={Development}/>
+                <Route exact path="/goals" component={Goals}/>
             </Switch>
 
         </Suspense>

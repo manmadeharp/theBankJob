@@ -47,7 +47,7 @@ const Template = (props) => {
                 {/*<Menu.Item ></Menu.Item>*/}
                 <Menu theme="dark" mode="inline" defaultSelectedKeys={['4']}>
                     <Menu.Item key="1" icon={<UserOutlined/>}>
-                        nav 1
+                        <Link to="/">Home</Link>
                     </Menu.Item>
                     <Menu.Item key="2" icon={<VideoCameraOutlined/>}>
                         nav 2
@@ -58,6 +58,12 @@ const Template = (props) => {
                     <Menu.Item key="4" icon={<UserOutlined/>}>
                         nav 4
                     </Menu.Item>
+
+                    <SubMenu key="sub2" icon={<UserOutlined/>} title="Development">
+                        <Menu.Item key="5"><Link to="/development">Development</Link></Menu.Item>
+                        <Menu.Item key="6"><Link to="/goals">Goals and aims</Link></Menu.Item>
+                    </SubMenu>
+
                 </Menu>
             </Sider>
             <Layout>
@@ -74,7 +80,7 @@ const Template = (props) => {
                             </Item>
                         )}
                         {user && (
-                            <SubMenu key="SubMenu" icon={<UserOutlined/>} title="User"
+                            <SubMenu key="SubMenu" icon={<UserOutlined/>} title={user.email && user.email.split("@")[0]}
                                      className="float-right">
                                 <Menu.ItemGroup>
                                     <Menu.Item key="setting:1">Profile Settings</Menu.Item>
@@ -86,11 +92,9 @@ const Template = (props) => {
                 </Header>
                 <Content style={{margin: '24px 16px 0'}}>
                     <div className="site-layout-background" style={{padding: 24}}>
-                        {/*hello*/}
                         {props.text}
                     </div>
                 </Content>
-                <Footer style={{textAlign: 'center'}}>Ant Design ©2018 Created by Ant UED</Footer>
             </Layout>
         </Layout>
     );
